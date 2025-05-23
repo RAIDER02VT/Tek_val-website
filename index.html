@@ -1,89 +1,144 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TekVal - Soluzioni Digitali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --primary: #007bff;
+      --dark: #222;
+      --gray: #555;
+      --bg-light: #f9f9f9;
+      --font: 'Inter', sans-serif;
+    }
+
+    * {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: #fff;
+      color: var(--dark);
       line-height: 1.6;
     }
+
     header {
-      padding: 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
       border-bottom: 1px solid #eee;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
     header img {
-      height: 100px;
+      height: 64px;
     }
+
     nav a {
-      margin-left: 1.5rem;
+      margin-left: 2rem;
       text-decoration: none;
-      color: #333;
+      color: var(--dark);
       font-weight: 600;
+      transition: color 0.2s ease;
     }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
     .hero {
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem;
+      background: var(--bg-light);
     }
+
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       margin-bottom: 1rem;
+      font-weight: 700;
     }
+
     .hero p {
-      font-size: 1.125rem;
-      color: #555;
-      max-width: 600px;
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 640px;
       margin: 0 auto;
     }
+
     .section {
-      padding: 3rem 2rem;
       max-width: 960px;
       margin: 0 auto;
+      padding: 4rem 2rem;
     }
+
     .section h2 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
+
+    .section p {
+      font-size: 1.125rem;
+      color: var(--gray);
+    }
+
     .footer {
-      padding: 2rem;
+      background: var(--bg-light);
       text-align: center;
-      background: #f5f5f5;
-      font-size: 0.875rem;
+      padding: 2rem;
+      font-size: 0.9rem;
       color: #777;
     }
-    /* Chat button */
+
     .chat-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 28px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background 0.2s;
     }
+
     .chat-button:hover {
-      background-color: #0056b3;
+      background: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="TekVal Logo">
+    <img src="logo.png" alt="TekVal Logo" />
     <nav>
       <a href="#servizi">Servizi</a>
       <a href="#chi-siamo">Chi siamo</a>
@@ -93,17 +148,17 @@
 
   <section class="hero">
     <h1>Innovazione Digitale, Affidabilità Umana</h1>
-    <p>TekVal sviluppa soluzioni software semplici, potenti e personalizzate. Dal chatbot all’automazione: tecnologia al servizio delle persone.</p>
+    <p>Soluzioni software personalizzate: chatbot, automazione, tecnologie su misura per le tue sfide.</p>
   </section>
 
   <section class="section" id="servizi">
     <h2>Cosa Facciamo</h2>
-    <p>Progettiamo e realizziamo strumenti digitali su misura: chatbot intelligenti, interfacce web intuitive, automazione dei flussi e supporto tecnico evoluto. Ogni progetto è costruito sulla base dei tuoi bisogni reali.</p>
+    <p>Progettiamo strumenti digitali su misura: chatbot intelligenti, interfacce moderne, automazione e supporto tecnico avanzato. Ogni soluzione nasce da un bisogno concreto.</p>
   </section>
 
   <section class="section" id="chi-siamo">
     <h2>Chi è TekVal</h2>
-    <p>Siamo un team snello con un grande obiettivo: rendere la tecnologia chiara e utile. Il nostro approccio è diretto, trasparente e guidato dall’esperienza. Collaboriamo con aziende, professionisti e startup che vogliono crescere.</p>
+    <p>Un team agile con l’obiettivo di rendere la tecnologia semplice, efficace e comprensibile. Lavoriamo con aziende, professionisti e startup che vogliono innovare davvero.</p>
   </section>
 
   <section class="section" id="contatti">
