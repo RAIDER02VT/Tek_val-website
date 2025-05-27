@@ -151,6 +151,21 @@
       font-size: 1rem;
     }
 
+    .chatbot-grid video {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+
+    .web-social-grid img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+
+
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -273,6 +288,48 @@
     </div>
   </section>
 
+  <!-- Inserisci questo blocco subito **dopo** la sezione "I nostri Servizi" e prima di "Chi è TekVal" -->
+  <section class="section" id="portfolio-chatbot">
+    <h2>Chatbot</h2>
+    <div class="grid chatbot-grid">
+      <div class="card">
+        <video controls>
+          <source src="videos/chatbot1.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+        <h3>Bot Prenotazioni</h3>
+        <p>Chatbot che gestisce prenotazioni in tempo reale, rispondendo in modo naturale.</p>
+      </div>
+      <div class="card">
+        <video controls>
+          <source src="videos/chatbot2.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+        <h3>Assistenza Clienti</h3>
+        <p>Automatizza il supporto clienti 24/7 con risposte rapide e personalizzate.</p>
+      </div>
+      <!-- Aggiungi altri video chatbot qui -->
+    </div>
+  </section>
+
+  <section class="section" id="portfolio-web-social">
+    <h2>Siti Web & Social Media</h2>
+    <div class="grid web-social-grid">
+      <div class="card">
+        <img src="images/sito1.jpg" alt="Sito vetrina per ristorante">
+        <h3>Sito Ristorante</h3>
+        <p>Design moderno, responsive e menu interattivo.</p>
+      </div>
+      <div class="card">
+        <img src="images/post-instagram1.jpg" alt="Post Instagram per brand moda">
+        <h3>Instagram Brand Moda</h3>
+        <p>Strategia social e post creativi per aumento follower.</p>
+      </div>
+      <!-- Aggiungi altre immagini progetti qui -->
+    </div>
+  </section>
+
+
   <section class="section" id="chi-siamo">
     <h2>Chi è TekVal</h2>
     <p>TekVal nasce dall’incontro tra competenze tecniche e passione per l’innovazione. Siamo un team multidisciplinare, giovane ma esperto, che crede nel potere delle tecnologie digitali quando sono davvero utili, comprensibili e orientate al risultato. Nessuna soluzione standard: solo progetti tagliati su misura.</p>
@@ -281,7 +338,7 @@
 
   <section class="section" id="contatti">
     <h2>Contattaci</h2>
-    <p>Vuoi avere piu informazioni sui nostri chat-bot e altri servizi, o hai un’idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
+    <p>Vuoi avere piu informazioni sui nostri chat-bot e altri servizi, o se hai un’idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
     <form class="contact-form">
       <input type="text" name="name" placeholder="Nome e Cognome" required>
       <input type="email" name="email" placeholder="Email" required>
