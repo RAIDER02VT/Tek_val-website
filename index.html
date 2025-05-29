@@ -31,14 +31,12 @@
     }
 
     header {
-      background: rgba(244, 240, 248, 0.95); /* Sfondo semi-trasparente */
-      backdrop-filter: blur(100px); /* Effetto vetro */
-      box-shadow: var(--shadow);
+      background: transparent; /* Completamente trasparente */
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 1.5rem 2rem;
-      position: fixed; /* Cambiato da sticky a fixed */
+      padding: 2rem 2rem;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
@@ -46,11 +44,10 @@
     }
 
     header img {
-      height: 45px; /* Dimensione simile al testo della nav */
-      width: 120px;
-      filter: drop-shadow(0 0 0 transparent); /* Rimuove sfondo bianco */
-      transition: transform 0.3s ease;
-      margin-right: auto;
+      height: 60px; /* Logo più grande */
+      width: auto;
+      filter: drop-shadow(0 0 0 transparent);
+      margin-right: 3rem; /* Più spazio tra logo e nav */
     }
 
     header img:hover {
