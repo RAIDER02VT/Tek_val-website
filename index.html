@@ -34,7 +34,7 @@
       background-color: var(--card-bg);
       box-shadow: var(--shadow);
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start; /* Allinea a sinistra */
       align-items: center;
       padding: 1.5rem 2rem;
       position: sticky;
@@ -43,8 +43,12 @@
     }
 
     header img {
-      height: 60px;
+      height: 40px; /* Ridotta da 60px a 40px */
+      width: auto;
+      background: transparent; /* Forza trasparenza */
+      mix-blend-mode: multiply; /* Rimuove sfondo bianco */
       transition: transform 0.3s ease;
+      margin-right: auto; /* Spinge l'immagine completamente a sinistra */
     }
 
     header img:hover {
