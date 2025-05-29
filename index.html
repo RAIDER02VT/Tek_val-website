@@ -31,23 +31,26 @@
     }
 
     header {
+      background: rgba(244, 240, 248, 0.95); /* Sfondo semi-trasparente */
+      backdrop-filter: blur(10px); /* Effetto vetro */
       box-shadow: var(--shadow);
       display: flex;
-      justify-content: flex-start; /* Allinea a sinistra */
+      justify-content: flex-start;
       align-items: center;
       padding: 1.5rem 2rem;
-      position: sticky;
+      position: fixed; /* Cambiato da sticky a fixed */
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 999;
     }
 
     header img {
-      height: 50px; /* Ridotta da 60px a 40px */
+      height: 45px; /* Dimensione simile al testo della nav */
       width: auto;
-      background: transparent; /* Forza trasparenza */
-      mix-blend-mode: multiply; /* Rimuove sfondo bianco */
+      filter: drop-shadow(0 0 0 transparent); /* Rimuove sfondo bianco */
       transition: transform 0.3s ease;
-      margin-right: auto; /* Spinge l'immagine completamente a sinistra */
+      margin-right: auto;
     }
 
     header img:hover {
