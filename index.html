@@ -64,9 +64,10 @@
     }
 
     header img {
-      height: 32px;
+      height: clamp(40px, 5vw, 60px); /* si adatta tra 40px e 60px in base alla larghezza dello schermo */
       width: auto;
     }
+
 
     .logo-text {
       font-size: 1.25rem;
@@ -500,7 +501,7 @@
   <header>
     <div class="header-content">
       <div class="logo-section">
-        <img src="logo.jpg" alt="TekVal Logo">
+        <img src="logo.png" alt="TekVal Logo">
         <div class="logo-text">TekVal</div>
       </div>
       <nav>
