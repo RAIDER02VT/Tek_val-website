@@ -219,22 +219,29 @@
       line-height: 1.6;
     }
 
-    /* Grid cards stile Linear */
+    /* Grid cards stile Linear - migliorato */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      }
     }
 
     .card {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      transition: all 0.3s ease;
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      group: hover;
     }
 
     .card::before {
@@ -243,33 +250,68 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 1px;
+      height: 2px;
       background: var(--gradient-primary);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .card:hover::before {
       opacity: 1;
     }
 
+    .card:hover::after {
+      opacity: 1;
+    }
+
     .card:hover {
-      border-color: rgba(88, 166, 255, 0.3);
-      transform: translateY(-2px);
+      border-color: rgba(88, 166, 255, 0.4);
+      transform: translateY(-6px);
       background: var(--bg-tertiary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1) rotate(5deg);
     }
 
     .card h3 {
-      font-size: 1.25rem;
+      font-size: 1.375rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
     }
 
     .card p {
       color: var(--text-secondary);
-      line-height: 1.6;
-      font-size: 0.9rem;
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
 
     /* Portfolio sections */
@@ -343,13 +385,16 @@
       width: 100%;
       background: var(--gradient-primary);
       color: white;
-      padding: 0.875rem;
+      padding: 1rem;
       border: none;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.875rem;
       cursor: pointer;
       transition: all 0.2s ease;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
     }
 
     .contact-form button:hover {
@@ -482,18 +527,22 @@
       <h2>I nostri Servizi</h2>
       <div class="grid">
         <div class="card">
+          <div class="card-icon">🤖</div>
           <h3>Chatbot Intelligenti</h3>
           <p>I nostri chatbot non sono semplici risponditori automatici: sono veri e propri assistenti digitali. Interagiscono con i clienti, rispondono alle domande, guidano nelle scelte, automatizzano la comunicazione e lavorano 24/7. Costruiti su misura, con linguaggio naturale e integrazione totale nei tuoi sistemi.</p>
         </div>
         <div class="card">
+          <div class="card-icon">🎨</div>
           <h3>Interfacce Moderne</h3>
           <p>Progettiamo e realizziamo siti web, piattaforme intuitive e canali social(instagram, facebook, tiktok ecc...), accattivanti, responsive e performanti. L'esperienza utente è al centro: ogni interfaccia è pensata per essere semplice, bella e funzionale. Che tu voglia un sito vetrina o un portale complesso, ti accompagniamo in ogni fase del progetto.</p>
         </div>
         <div class="card">
+          <div class="card-icon">⚡</div>
           <h3>Ottimizzazione e Automazione dei Sistemi Aziendali</h3>
           <p>Miglioriamo database e gestionali eliminando attività ripetitive, riducendo gli errori e aumentando la produttività. Con l'automazione personalizzata dei tuoi flussi aziendali, trasformiamo le routine in processi fluidi. Dall'inserimento dati alle notifiche automatiche, il tuo tempo torna ad essere una risorsa strategica.</p>
         </div>
         <div class="card">
+          <div class="card-icon">🧠</div>
           <h3>Agenti AI Personalizzati per la Tua Azienda</h3>
           <p>Sviluppiamo assistenti AI intelligenti che gestiscono autonomamente attività complesse come supporto e interazione con clienti, analisi dati e automazione decisionale. I nostri agenti AI si integrano perfettamente nei tuoi sistemi esistenti, apprendono dalle tue procedure e operano 24/7. Dalla gestione delle richieste alla generazione di report, i tuoi processi aziendali diventano più smart per un business sempre più efficiente e pronto al mercato moderno.</p>
         </div>
