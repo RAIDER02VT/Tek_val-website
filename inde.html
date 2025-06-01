@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Palette dai colori del logo TekVal */
+      /* Palette ispirata a Linear + colori del logo */
       --bg-primary: #0d1117;
       --bg-secondary: #161b22;
       --bg-tertiary: #21262d;
@@ -15,18 +15,11 @@
       --text-secondary: #8b949e;
       --text-muted: #6e7681;
       --border: #30363d;
-      
-      /* Colori del logo - usati separatamente */
-      --yellow: #f1c40f;
-      --orange: #e67e22;
-      --red: #e74c3c;
-      --blue: #3498db;
-      
-      /* Gradienti separati per ogni sezione */
-      --gradient-yellow: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
-      --gradient-orange: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-      --gradient-red: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-      --gradient-blue: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      --accent-blue: #58a6ff;
+      --accent-orange: #f97316;
+      --accent-purple: #bc7cf7;
+      --gradient-primary: linear-gradient(135deg, #58a6ff 0%, #bc7cf7 50%, #f97316 100%);
+      --gradient-subtle: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(188, 124, 247, 0.1) 50%, rgba(249, 115, 22, 0.1) 100%);
     }
 
     * {
@@ -43,7 +36,7 @@
       overflow-x: hidden;
     }
 
-    /* Header */
+    /* Header stile Linear */
     header {
       position: fixed;
       top: 0;
@@ -71,14 +64,15 @@
     }
 
     header img {
-      height: clamp(45px, 5vw, 60px);
+      height: clamp(45px, 5vw, 60px); /* si adatta tra 40px e 60px in base alla larghezza dello schermo */
       width: auto;
     }
+
 
     .logo-text {
       font-size: 1.25rem;
       font-weight: 800;
-      color: white;
+      color: var(--text-primary);
     }
 
     nav {
@@ -101,12 +95,12 @@
       background: var(--bg-tertiary);
     }
 
-    /* Hero section - Giallo */
+    /* Hero section stile Linear */
     .hero {
       padding: 8rem 2rem 6rem;
       text-align: center;
       position: relative;
-      background: radial-gradient(ellipse at center, rgba(241, 196, 15, 0.05) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
     }
 
     .hero::before {
@@ -116,8 +110,8 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: var(--gradient-yellow);
-      opacity: 0.6;
+      background: var(--gradient-primary);
+      opacity: 0.3;
     }
 
     .hero-content {
@@ -129,7 +123,7 @@
     .hero h1 {
       font-size: 3.5rem;
       font-weight: 700;
-      background: var(--gradient-yellow);
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -153,8 +147,8 @@
     }
 
     .btn-primary {
-      background: var(--gradient-yellow);
-      color: #2c3e50;
+      background: var(--gradient-primary);
+      color: white;
       padding: 0.875rem 1.75rem;
       border-radius: 8px;
       text-decoration: none;
@@ -194,10 +188,10 @@
 
     .btn-secondary:hover {
       background: var(--bg-secondary);
-      border-color: var(--yellow);
+      border-color: var(--accent-blue);
     }
 
-    /* Sections */
+    /* Sections stile Linear */
     .section {
       padding: 3rem 2rem;
       position: relative;
@@ -226,7 +220,7 @@
       line-height: 1.6;
     }
 
-    /* Grid cards */
+    /* Grid cards stile Linear - migliorato */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -240,7 +234,6 @@
       }
     }
 
-    /* Stili base per le card */
     .card {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
@@ -259,6 +252,7 @@
       left: 0;
       right: 0;
       height: 2px;
+      background: var(--gradient-primary);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
@@ -270,6 +264,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
+      background: radial-gradient(circle, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
@@ -282,10 +277,18 @@
       opacity: 1;
     }
 
+    .card:hover {
+      border-color: rgba(88, 166, 255, 0.4);
+      transform: translateY(-6px);
+      background: var(--bg-tertiary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
     .card-icon {
       width: 48px;
       height: 48px;
       border-radius: 12px;
+      background: var(--gradient-primary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -312,64 +315,9 @@
       font-size: 0.95rem;
     }
 
-    /* Sezione servizi - Arancione */
-    #servizi {
-      background: radial-gradient(ellipse at center, rgba(230, 126, 34, 0.03) 0%, transparent 70%);
-    }
-
-    #servizi .card::before {
-      background: var(--gradient-orange);
-    }
-
-    #servizi .card::after {
-      background: radial-gradient(circle, rgba(230, 126, 34, 0.05) 0%, transparent 70%);
-    }
-
-    #servizi .card:hover {
-      border-color: rgba(230, 126, 34, 0.4);
-      transform: translateY(-6px);
-      background: var(--bg-tertiary);
-      box-shadow: 0 20px 40px rgba(230, 126, 34, 0.1);
-    }
-
-    #servizi .card-icon {
-      background: var(--gradient-orange);
-      color: white;
-    }
-
-    /* Portfolio sections - Rosso */
+    /* Portfolio sections */
     .portfolio-section {
-      background: radial-gradient(ellipse at center, rgba(231, 76, 60, 0.03) 0%, transparent 70%);
-    }
-
-    #portfolio-chatbot .card::before {
-      background: var(--gradient-red);
-    }
-
-    #portfolio-chatbot .card::after {
-      background: radial-gradient(circle, rgba(231, 76, 60, 0.05) 0%, transparent 70%);
-    }
-
-    #portfolio-chatbot .card:hover {
-      border-color: rgba(231, 76, 60, 0.4);
-      transform: translateY(-6px);
-      background: var(--bg-tertiary);
-      box-shadow: 0 20px 40px rgba(231, 76, 60, 0.1);
-    }
-
-    #portfolio-web-social .card::before {
-      background: var(--gradient-red);
-    }
-
-    #portfolio-web-social .card::after {
-      background: radial-gradient(circle, rgba(231, 76, 60, 0.05) 0%, transparent 70%);
-    }
-
-    #portfolio-web-social .card:hover {
-      border-color: rgba(231, 76, 60, 0.4);
-      transform: translateY(-6px);
-      background: var(--bg-tertiary);
-      box-shadow: 0 20px 40px rgba(231, 76, 60, 0.1);
+      background: linear-gradient(180deg, transparent 0%, rgba(88, 166, 255, 0.02) 50%, transparent 100%);
     }
 
     .media-container {
@@ -391,14 +339,9 @@
       transform: scale(1.02);
     }
 
-    /* Sezione Chi siamo - Celeste */
-    #chi-siamo {
-      background: radial-gradient(ellipse at center, rgba(52, 152, 219, 0.03) 0%, transparent 70%);
-    }
-
-    /* Sezione contatti - Celeste */
+    /* Contact form stile Linear */
     .contact-section {
-      background: radial-gradient(ellipse at center, rgba(52, 152, 219, 0.05) 0%, transparent 70%);
+      background: var(--gradient-subtle);
     }
 
     .contact-form {
@@ -435,13 +378,13 @@
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: var(--blue);
+      border-color: var(--accent-blue);
       background: var(--bg-primary);
     }
 
     .contact-form button {
       width: 100%;
-      background: var(--gradient-blue);
+      background: var(--gradient-primary);
       color: white;
       padding: 1rem;
       border: none;
@@ -459,7 +402,7 @@
       transform: translateY(-1px);
     }
 
-    /* Footer */
+    /* Footer stile Linear */
     .footer {
       background: var(--bg-secondary);
       border-top: 1px solid var(--border);
@@ -469,12 +412,12 @@
       font-size: 0.875rem;
     }
 
-    /* Chat button - Celeste */
+    /* Chat button */
     .chat-button {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: var(--gradient-blue);
+      background: var(--gradient-primary);
       color: white;
       border: none;
       border-radius: 50%;
@@ -484,12 +427,12 @@
       cursor: pointer;
       transition: all 0.2s ease;
       z-index: 999;
-      box-shadow: 0 8px 32px rgba(52, 152, 219, 0.3);
+      box-shadow: 0 8px 32px rgba(88, 166, 255, 0.3);
     }
 
     .chat-button:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 40px rgba(52, 152, 219, 0.4);
+      box-shadow: 0 12px 40px rgba(88, 166, 255, 0.4);
     }
 
     /* Responsive */
