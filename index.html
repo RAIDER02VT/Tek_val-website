@@ -57,6 +57,32 @@
       --gradient-red: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
       --gradient-blue: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     }
+    #soluzioni-ai {
+      background: radial-gradient(ellipse at center, rgba(52, 152, 219, 0.05) 0%, transparent 70%);
+    }
+
+    #soluzioni-ai .card::before {
+      background: var(--gradient-blue);
+    }
+
+    #soluzioni-ai .card::after {
+      background: radial-gradient(circle, rgba(52, 152, 219, 0.08) 0%, transparent 70%);
+    }
+
+    #soluzioni-ai .card:hover {
+      border-color: rgba(52, 152, 219, 0.4);
+      transform: translateY(-6px);
+      background: var(--bg-tertiary);
+      box-shadow: 0 20px 40px rgba(52, 152, 219, 0.1);
+    }
+
+    #soluzioni-ai .card-icon {
+      background: var(--gradient-blue);
+      color: white;
+    }
+    #soluzioni-ai {
+      scroll-margin-top: 100px;
+    }
 
     * {
       margin: 0;
@@ -644,6 +670,7 @@
         <a href="#servizi">Servizi</a>
         <a href="#chi-siamo">Chi siamo</a>
         <a href="#contatti">Contatti</a>
+        <a href="#soluzioni-ai">Soluzioni AI</a>
       </nav>
     </div>
   </header>
@@ -694,6 +721,54 @@
           <div class="card-icon">🎨</div>
           <h3>Interfacce Moderne</h3>
           <p>Progettiamo e realizziamo siti web, piattaforme intuitive e canali social(instagram, facebook, tiktok ecc...), accattivanti, responsive e performanti. L'esperienza utente è al centro: ogni interfaccia è pensata per essere semplice, bella e funzionale. Che tu voglia un sito vetrina o un portale complesso, ti accompagniamo in ogni fase del progetto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="soluzioni-ai">
+    <div class="container">
+      <h2>Soluzioni AI per la tua azienda</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3>Chatbot intelligenti</h3>
+          <p>Automatizza la conversazione con i clienti 24/7, integrato nei tuoi canali e sistemi preferiti.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📩</div>
+          <h3>Preventivi automatici via email</h3>
+          <p>Ricevi richieste via email, analizza i dati e rispondi con un preventivo automatico e preciso.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Dashboard con analisi AI</h3>
+          <p>Visualizza l'andamento della tua azienda in tempo reale con dashboard potenziate da intelligenza artificiale.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3>Gestione ordini e magazzino</h3>
+          <p>Organizza e traccia ordini, disponibilità, spedizioni e fatture in automatico.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📝</div>
+          <h3>Creazione documenti</h3>
+          <p>Genera contratti, DDT, bolle, preventivi e altri documenti con un click partendo da email o messaggi WhatsApp.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>Integrazione gestionale</h3>
+          <p>Connetti l’AI ai tuoi gestionali (es. TeamSystem, Excel, CRM) per automatizzare attività interne.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📥</div>
+          <h3>Smistamento email intelligente</h3>
+          <p>Filtra, categorizza e rispondi solo alle email rilevanti con AI addestrata su di te.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔎</div>
+          <h3>Ricerca semantica nei tuoi documenti</h3>
+          <p>Cerca come su Google nei tuoi PDF, Excel, email e file interni con un linguaggio naturale.</p>
         </div>
       </div>
     </div>
