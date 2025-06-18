@@ -11,6 +11,13 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Redirect forzato su HTTPS -->
+  <script>
+    if (location.protocol !== 'https:') {
+      location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
+    }
+  </script>
+
   <!-- Dati strutturati Schema.org per migliorare la SEO e i rich snippet -->
   <script type="application/ld+json">
   {
