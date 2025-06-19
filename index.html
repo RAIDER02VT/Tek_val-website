@@ -952,7 +952,7 @@
     <div class="container">
       <h2>Contattaci</h2>
       <p class="section-intro">Vuoi avere piu informazioni sui nostri chat-bot e altri servizi, o se hai un'idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
-      <form class="contact-form" action="https://tekval.ai/api/contact" method="POST">
+      <form action="https://tek-val-website.onrender.com/api/contact" method="POST">
         <div class="form-group">
           <input type="text" name="name" placeholder="Nome e Cognome" required>
         </div>
@@ -972,5 +972,25 @@
   </footer>
 
   <button class="chat-button" onclick="alert('Funzione chat in arrivo!')">✉</button>
+  <script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const response = await fetch("https://tek-val-website.onrender.com/api/contact", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      alert("Messaggio inviato con successo!");
+      form.reset();
+    } else {
+      alert("Errore nell'invio. Riprova tra qualche secondo.");
+    }
+  });
+</script>
+
 </body>
 </html>
