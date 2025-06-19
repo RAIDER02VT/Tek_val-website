@@ -604,74 +604,149 @@
       box-shadow: 0 12px 40px rgba(52, 152, 219, 0.5);
     }
 
-    /* Responsive */
-    /* Responsive */
+    /* Responsive - FIX MOBILE OTTIMIZZATO */
     @media (max-width: 768px) {
-    .header-content {
-      padding: 1rem;
+      /* Header mobile ottimizzato */
+      header {
+        background: rgba(13, 17, 23, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 0.75rem 0;
+      }
+
+      .header-content {
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .logo-section {
+        order: 1;
+        gap: 0.5rem;
+      }
+
+      header img {
+        height: 35px;
+      }
+
+      .logo-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      nav {
+        order: 2;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 8px;
+        background: rgba(52, 152, 219, 0.1);
+        border: 1px solid rgba(52, 152, 219, 0.2);
+        color: var(--text-primary);
+        white-space: nowrap;
+        min-width: fit-content;
+      }
+
+      nav a:hover {
+        background: var(--gradient-blue);
+        color: white;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+      }
+
+      /* Hero mobile con padding aumentato per compensare header più alto */
+      .hero {
+        padding: 10rem 1rem 4rem;
+        margin-top: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin-top: 1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      /* Scroll margin aumentato per le sezioni */
+      .section {
+        padding: 3rem 1rem;
+        scroll-margin-top: 120px;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      .contact-form {
+        margin: 0 1rem;
+        padding: 2rem;
+      }
+
+      /* Chat button mobile */
+      .chat-button {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+      }
     }
 
-    nav {
-      gap: 1rem;
-    }
+    /* Extra small mobile */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 11rem 0.75rem 3rem;
+      }
 
-    nav a {
-      padding: 0.5rem;
-      font-size: 0.8rem;
-    }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
 
-    .hero {
-      padding: 7rem 1rem 4rem;
-    }
+      nav a {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.6rem;
+      }
 
-    .hero h1 {
-      font-size: 2.25rem;
-      line-height: 1.2;
+      .section {
+        scroll-margin-top: 130px;
+      }
     }
-
-    .hero p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .cta {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      width: 100%;
-      max-width: 300px;
-      font-size: 1rem;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .section {
-      padding: 3rem 1rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .card {
-      padding: 1.5rem;
-    }
-
-    .contact-form {
-      margin: 0 1rem;
-      padding: 2rem;
-    }
-  }
 
   </style>
 </head>
@@ -686,7 +761,7 @@
         <a href="#servizi">Servizi</a>
         <a href="#chi-siamo">Chi siamo</a>
         <a href="#contatti">Contatti</a>
-        <a href="valore-agent-ai.html">Dove l’AI crea valore</a>
+        <a href="valore-agent-ai.html">Dove l'AI crea valore</a>
       </nav>
     </div>
   </header>
@@ -709,7 +784,7 @@
         <div class="card">
           <div class="card-icon">🤖</div>
           <h3>Chatbot Intelligenti</h3>
-          <p> I nostri chatbot non sono semplici risponditori automatici: sono veri e propri assistenti digitali evoluti, progettati per comprendere, interagire e risolvere in modo autonomo. A differenza delle risposte preimpostate, questi sistemi utilizzano intelligenza artificiale e linguaggio naturale per dialogare in modo fluido con i tuoi clienti, proprio come farebbe un operatore umano, ma con la velocità e l'affidabilità di un software. </p> <p> Un chatbot intelligente può accogliere i visitatori sul sito, rispondere alle domande frequenti, guidare nella scelta dei prodotti, raccogliere informazioni, prenotare appuntamenti e perfino gestire ordini o supporto post-vendita. Tutto questo senza pause, senza errori e senza tempi d’attesa: è attivo 24 ore su 24, 7 giorni su 7. </p> <p> Il vantaggio è concreto: riduci i tempi di risposta, aumenti la soddisfazione dei clienti, liberi il tuo team da compiti ripetitivi e migliori l'efficienza del servizio. Ogni chatbot viene progettato su misura per integrarsi nei tuoi sistemi aziendali (sito web, social, CRM, gestionali) e adattarsi alle tue regole, ai tuoi toni e ai tuoi processi. </p> <p> Investire in un chatbot intelligente significa dotarsi di un alleato che lavora in autonomia, migliora l’immagine del tuo brand e ti fa risparmiare tempo e risorse ogni giorno. </p>        </div>
+          <p> I nostri chatbot non sono semplici risponditori automatici: sono veri e propri assistenti digitali evoluti, progettati per comprendere, interagire e risolvere in modo autonomo. A differenza delle risposte preimpostate, questi sistemi utilizzano intelligenza artificiale e linguaggio naturale per dialogare in modo fluido con i tuoi clienti, proprio come farebbe un operatore umano, ma con la velocità e l'affidabilità di un software. </p> <p> Un chatbot intelligente può accogliere i visitatori sul sito, rispondere alle domande frequenti, guidare nella scelta dei prodotti, raccogliere informazioni, prenotare appuntamenti e perfino gestire ordini o supporto post-vendita. Tutto questo senza pause, senza errori e senza tempi d'attesa: è attivo 24 ore su 24, 7 giorni su 7. </p> <p> Il vantaggio è concreto: riduci i tempi di risposta, aumenti la soddisfazione dei clienti, liberi il tuo team da compiti ripetitivi e migliori l'efficienza del servizio. Ogni chatbot viene progettato su misura per integrarsi nei tuoi sistemi aziendali (sito web, social, CRM, gestionali) e adattarsi alle tue regole, ai tuoi toni e ai tuoi processi. </p> <p> Investire in un chatbot intelligente significa dotarsi di un alleato che lavora in autonomia, migliora l'immagine del tuo brand e ti fa risparmiare tempo e risorse ogni giorno. </p>        </div>
         <div class="card">
           <div class="card-icon">🧠</div>
           <h3>Il tuo assistente virtuale, sempre operativo</h3>
@@ -827,7 +902,7 @@
             </video>
           </div>
           <h3>Confronto siti studio legale</h3>
-          <p><p>Da un sito vecchio e confuso a uno moderno, chiaro e che conquista.</p>
+          <p>Da un sito vecchio e confuso a uno moderno, chiaro e che conquista.</p>
         </div>
       </div>
     </div>
@@ -855,7 +930,7 @@
             </video>
           </div>
           <h3>Pagina instagram</h3>
-          <p><p>Design curato, contenuti utili e stile che colpisce: una pagina davvero ben fatta.</p>
+          <p>Design curato, contenuti utili e stile che colpisce: una pagina davvero ben fatta.</p>
         </div>
       </div>
     </div>
