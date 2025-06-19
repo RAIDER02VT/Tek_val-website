@@ -25,14 +25,14 @@ app.add_middleware(
 def parse_form(
     name: str = Form(...),
     email: str = Form(...),
-    descrizione: str = Form(...)
+    message: str = Form(...)
 ):
     # Costruisci l'email
     msg = EmailMessage()
     msg["From"] = email_user
     msg["To"] = email_to
     msg["Subject"] = f"Nuovo messaggio dal sito da {email}"
-    msg.set_content(f"{name}\n\nEmail: {email}\n\nMessaggio:\n{descrizione}")
+    msg.set_content(f"{name}\n\nEmail: {email}\n\nMessaggio:\n{message}")
 
     # Invia email (con SMTP SSL)
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
