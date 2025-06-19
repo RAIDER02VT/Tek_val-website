@@ -8,6 +8,18 @@ email_pass = os.getenv("EMAIL_PASS")
 email_to = os.getenv("EMAIL_TO")
 
 app = FastAPI()
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# Aggiungi questa parte
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://tekval.ai"],  # o "*" se sei in fase di test
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/api/contact")
 def parse_form(
