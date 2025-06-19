@@ -605,65 +605,74 @@
     }
 
     /* Responsive */
+    /* Responsive */
     @media (max-width: 768px) {
-      .header-content {
-        padding: 1rem;
-      }
-
-      nav {
-        gap: 1rem;
-      }
-
-      nav a {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-      }
-
-      .hero {
-        padding: 6rem 1rem 4rem;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.125rem;
-      }
-
-      .cta {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn-primary,
-      .btn-secondary {
-        width: 200px;
-        text-align: center;
-      }
-
-      .section {
-        padding: 3rem 1rem;
-      }
-
-      .section h2 {
-        font-size: 2rem;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-      }
-
-      .contact-form {
-        margin: 0 1rem;
-        padding: 2rem;
-      }
+    .header-content {
+      padding: 1rem;
     }
+
+    nav {
+      gap: 1rem;
+    }
+
+    nav a {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .hero {
+      padding: 7rem 1rem 4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .cta {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+      font-size: 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+    }
+
+    .contact-form {
+      margin: 0 1rem;
+      padding: 2rem;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -910,7 +919,7 @@
     <div class="container">
       <h2>Contattaci</h2>
       <p class="section-intro">Vuoi avere piu informazioni sui nostri chat-bot e altri servizi, o se hai un'idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
-      <form class="contact-form">
+      <form class="contact-form" action="https://tekval.ai/api/contact" method="POST">
         <div class="form-group">
           <input type="text" name="name" placeholder="Nome e Cognome" required>
         </div>
