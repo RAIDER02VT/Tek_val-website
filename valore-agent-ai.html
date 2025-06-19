@@ -4,15 +4,337 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dove gli Agent AI creano valore | TekVal</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Scopri dove gli agenti di intelligenza artificiale creano valore reale per la tua azienda - TekVal">
+  <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Redirect forzato su HTTPS -->
+  <script>
+    if (location.protocol !== 'https:') {
+      location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
+    }
+  </script>
+
+  <!-- Dati strutturati Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Dove gli Agent AI creano valore",
+    "description": "Esempi concreti di applicazione degli agenti di intelligenza artificiale in diversi settori aziendali",
+    "url": "https://tekval.ai/valore-agent-ai.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "TekVal",
+      "url": "https://tekval.ai"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Palette dai colori del logo TekVal */
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --text-primary: #f0f6fc;
+      --text-secondary: #8b949e;
+      --text-muted: #6e7681;
+      --border: #30363d;
+      
+      /* Colori del logo - usati separatamente */
+      --yellow: #f1c40f;
+      --orange: #e67e22;
+      --red: #e74c3c;
+      --blue: #3498db;
+      
+      /* Gradienti separati per ogni sezione */
+      --gradient-yellow: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+      --gradient-orange: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+      --gradient-red: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      --gradient-blue: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 80px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(13, 17, 23, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    header img {
+      height: clamp(45px, 5vw, 60px);
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+      background: var(--bg-tertiary);
+    }
+
+    /* Sections */
+    .section {
+      padding: 3rem 2rem;
+      position: relative;
+      scroll-margin-top: 100px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 0.67rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.67rem;
+      line-height: 1.6;
+    }
+
+    /* Grid cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2.67rem;
+    }
+
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      }
+    }
+
+    /* Stili base per le card */
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      group: hover;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .card h3 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.67rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Portfolio sections - Rosso */
+    .portfolio-section {
+      background: radial-gradient(ellipse at center, rgba(231, 76, 60, 0.06) 0%, transparent 70%);
+    }
+
+    .portfolio-section .card::before {
+      background: var(--gradient-red);
+    }
+
+    .portfolio-section .card::after {
+      background: radial-gradient(circle, rgba(231, 76, 60, 0.08) 0%, transparent 70%);
+    }
+
+    .portfolio-section .card:hover {
+      border-color: rgba(231, 76, 60, 0.5);
+      transform: translateY(-6px);
+      background: var(--bg-tertiary);
+      box-shadow: 0 20px 40px rgba(231, 76, 60, 0.15);
+    }
+
+    .portfolio-section .card-icon {
+      background: var(--gradient-red);
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        padding: 1rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      nav a {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <div class="logo-section">
+      <div class="logo-section" style="display: flex; align-items: center; gap: 6px;">
         <img src="logo.png" alt="TekVal Logo">
-        <div class="logo-text">TekVal</div>
+        <div class="logo-text" style="color: white; font-size: 1.4rem; font-weight: 600;">TekVal</div>
       </div>
       <nav>
         <a href="index.html#servizi">Servizi</a>
@@ -76,7 +398,7 @@
         <div class="card">
           <div class="card-icon">🛒</div>
           <h3>E-commerce</h3>
-          <p>Assistenza all’acquisto, monitoraggio ordini e suggerimenti personalizzati.</p>
+          <p>Assistenza all'acquisto, monitoraggio ordini e suggerimenti personalizzati.</p>
         </div>
         <div class="card">
           <div class="card-icon">🏥</div>
