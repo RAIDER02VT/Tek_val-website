@@ -388,6 +388,19 @@
       font-size: 0.95rem;
     }
 
+    /* Lista nelle card */
+    .card ul {
+      margin: 0.75rem 0;
+      padding-left: 1.25rem;
+    }
+
+    .card li {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
     /* Sezione servizi - Arancione */
     #servizi {
       background: radial-gradient(ellipse at center, rgba(230, 126, 34, 0.03) 0%, transparent 70%);
@@ -510,6 +523,7 @@
       box-shadow: 0 4px 20px rgba(52, 152, 219, 0.1);
     }
 
+    /* FORM STYLES - CORRETTI E COMPLETI */
     .contact-form {
       max-width: 500px;
       margin: 0 auto;
@@ -517,12 +531,18 @@
       padding: 2.5rem;
       border-radius: 16px;
       border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
     .form-group {
       margin-bottom: 1.5rem;
     }
 
+    .form-group:last-of-type {
+      margin-bottom: 2rem;
+    }
+
+    /* Input e Textarea - Stili uniformi */
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -531,14 +551,17 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       color: var(--text-primary);
-      font-family: inherit;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 0.875rem;
       transition: all 0.2s ease;
+      resize: vertical;
+      box-sizing: border-box;
     }
 
     .contact-form input::placeholder,
     .contact-form textarea::placeholder {
       color: var(--text-muted);
+      opacity: 1;
     }
 
     .contact-form input:focus,
@@ -549,6 +572,13 @@
       box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
     }
 
+    /* Textarea specifica */
+    .contact-form textarea {
+      min-height: 120px;
+      line-height: 1.5;
+    }
+
+    /* Button del form */
     .contact-form button {
       width: 100%;
       background: var(--gradient-blue);
@@ -558,17 +588,31 @@
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.875rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       cursor: pointer;
       transition: all 0.2s ease;
-      margin: 0 auto;
+      margin: 0;
       display: block;
       text-align: center;
       box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+      position: relative;
+      overflow: hidden;
     }
 
     .contact-form button:hover {
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    }
+
+    .contact-form button:active {
+      transform: translateY(0);
+    }
+
+    /* Effetto di caricamento per il button */
+    .contact-form button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
     }
 
     /* Footer */
@@ -604,73 +648,28 @@
       box-shadow: 0 12px 40px rgba(52, 152, 219, 0.5);
     }
 
-    /* Responsive - FIX MOBILE OTTIMIZZATO */
+    /* Responsive */
     @media (max-width: 768px) {
-      /* Header mobile ottimizzato */
-      header {
-        background: rgba(13, 17, 23, 0.95);
-        backdrop-filter: blur(20px);
-        padding: 0.75rem 0;
-      }
-
       .header-content {
-        padding: 0.5rem 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-      }
-
-      .logo-section {
-        order: 1;
-        gap: 0.5rem;
-      }
-
-      header img {
-        height: 35px;
-      }
-
-      .logo-text {
-        font-size: 1.1rem;
-        font-weight: 700;
+        padding: 1rem;
       }
 
       nav {
-        order: 2;
-        gap: 0.5rem;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+        gap: 1rem;
       }
 
       nav a {
-        padding: 0.4rem 0.75rem;
+        padding: 0.5rem;
         font-size: 0.8rem;
-        font-weight: 600;
-        border-radius: 8px;
-        background: rgba(52, 152, 219, 0.1);
-        border: 1px solid rgba(52, 152, 219, 0.2);
-        color: var(--text-primary);
-        white-space: nowrap;
-        min-width: fit-content;
       }
 
-      nav a:hover {
-        background: var(--gradient-blue);
-        color: white;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-      }
-
-      /* Hero mobile con padding aumentato per compensare header più alto */
       .hero {
-        padding: 10rem 1rem 4rem;
-        margin-top: 0;
+        padding: 7rem 1rem 4rem;
       }
 
       .hero h1 {
         font-size: 2.25rem;
         line-height: 1.2;
-        margin-top: 1rem;
       }
 
       .hero p {
@@ -694,10 +693,8 @@
         text-align: center;
       }
 
-      /* Scroll margin aumentato per le sezioni */
       .section {
         padding: 3rem 1rem;
-        scroll-margin-top: 120px;
       }
 
       .section h2 {
@@ -718,33 +715,9 @@
         padding: 2rem;
       }
 
-      /* Chat button mobile */
-      .chat-button {
-        bottom: 1rem;
-        right: 1rem;
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-      }
-    }
-
-    /* Extra small mobile */
-    @media (max-width: 480px) {
-      .hero {
-        padding: 11rem 0.75rem 3rem;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      nav a {
-        font-size: 0.75rem;
-        padding: 0.35rem 0.6rem;
-      }
-
-      .section {
-        scroll-margin-top: 130px;
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 16px; /* Previene zoom su iOS */
       }
     }
 
@@ -761,7 +734,7 @@
         <a href="#servizi">Servizi</a>
         <a href="#chi-siamo">Chi siamo</a>
         <a href="#contatti">Contatti</a>
-        <a href="valore-agent-ai.html">Dove l'AI crea valore</a>
+        <a href="#soluzioni-ai">Soluzioni AI</a>
       </nav>
     </div>
   </header>
@@ -769,7 +742,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Innovazione Digitale, Affidabilità Umana</h1>
-      <p>In un mondo che corre veloce, ti aiutiamo a guadagnare tempo e denaro con soluzioni intelligenti. Il nostro core è lo sviluppo di agenti AI e chatbot che lavorano per te come un dipendente ideale: sempre disponibili, infallibili, veloci e molto più convenienti. Aggiungiamo a tutto questo efficienza, intelligenza e un tocco umano, con strumenti su misura per far crescere davvero il tuo business.</p>
+      <p>In un mondo che corre veloce, noi siamo il partner che rende la tecnologia alleata del tuo business. Sviluppiamo soluzioni software che uniscono efficienza, intelligenza e un tocco umano: chatbot, automazione, siti web e strumenti su misura per le tue reali esigenze.</p>
       <div class="cta">
         <a href="#servizi" class="btn-primary">Scopri i nostri servizi</a>
         <a href="#contatti" class="btn-secondary">Contattaci</a>
@@ -782,42 +755,9 @@
       <h2>I nostri servizi</h2>
       <div class="grid">
         <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>Chatbot Intelligenti</h3>
-          <p> I nostri chatbot non sono semplici risponditori automatici: sono veri e propri assistenti digitali evoluti, progettati per comprendere, interagire e risolvere in modo autonomo. A differenza delle risposte preimpostate, questi sistemi utilizzano intelligenza artificiale e linguaggio naturale per dialogare in modo fluido con i tuoi clienti, proprio come farebbe un operatore umano, ma con la velocità e l'affidabilità di un software. </p> <p> Un chatbot intelligente può accogliere i visitatori sul sito, rispondere alle domande frequenti, guidare nella scelta dei prodotti, raccogliere informazioni, prenotare appuntamenti e perfino gestire ordini o supporto post-vendita. Tutto questo senza pause, senza errori e senza tempi d'attesa: è attivo 24 ore su 24, 7 giorni su 7. </p> <p> Il vantaggio è concreto: riduci i tempi di risposta, aumenti la soddisfazione dei clienti, liberi il tuo team da compiti ripetitivi e migliori l'efficienza del servizio. Ogni chatbot viene progettato su misura per integrarsi nei tuoi sistemi aziendali (sito web, social, CRM, gestionali) e adattarsi alle tue regole, ai tuoi toni e ai tuoi processi. </p> <p> Investire in un chatbot intelligente significa dotarsi di un alleato che lavora in autonomia, migliora l'immagine del tuo brand e ti fa risparmiare tempo e risorse ogni giorno. </p>        </div>
-        <div class="card">
-          <div class="card-icon">🧠</div>
-          <h3>Il tuo assistente virtuale, sempre operativo</h3>
-          <p>
-            Offriamo <strong class="accent">agenti AI personalizzati</strong> che lavorano come un dipendente ideale: sempre attivi, affidabili e più convenienti. 
-            Un agente AI è un software intelligente capace di:
-          </p>
-          <p class="list-inline">
-            <span class="bullet">•</span> Risponde automaticamente ai messaggi di clienti via chat, email o social, riducendo il carico sul team e garantendo assistenza continua, 24 ore su 24<br>
-            
-            <span class="bullet">•</span> Analizza in tempo reale i dati aziendali (ordini, vendite, richieste) e genera report dettagliati senza intervento umano<br>
-            
-            <span class="bullet">•</span> Gestisce in autonomia prenotazioni, ordini, richieste interne e ticket, evitando errori e velocizzando i processi<br>
-            
-            <span class="bullet">•</span> Prende decisioni ripetitive in base a regole, logiche personalizzate e dati in input, alleggerendo i flussi operativi<br>
-            
-            <span class="bullet">•</span> Si integra con i tuoi strumenti (CRM, Excel, gestionali, Notion...) e coordina azioni automatizzate tra i vari sistemi<br>
-            
-            <span class="bullet">•</span> Impara dai tuoi processi aziendali, migliorando nel tempo le risposte, le azioni e la capacità di adattarsi alle esigenze specifiche
-          </p>
-          <p>
-            Il tutto <strong class="accent">perfettamente integrato nei tuoi strumenti aziendali</strong> e in grado di apprendere dai tuoi processi per migliorare nel tempo.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Ottimizzazione e Automazione dei Sistemi Aziendali</h3>
-          <p>Miglioriamo database e gestionali eliminando attività ripetitive, riducendo gli errori e aumentando la produttività. Con l'automazione personalizzata dei tuoi flussi aziendali, trasformiamo le routine in processi fluidi. Dall'inserimento dati alle notifiche automatiche, il tuo tempo torna ad essere una risorsa strategica.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎨</div>
-          <h3>Interfacce Moderne</h3>
-          <p>Progettiamo e realizziamo siti web, piattaforme intuitive e canali social(instagram, facebook, tiktok ecc...), accattivanti, responsive e performanti. L'esperienza utente è al centro: ogni interfaccia è pensata per essere semplice, bella e funzionale. Che tu voglia un sito vetrina o un portale complesso, ti accompagniamo in ogni fase del progetto.</p>
+          <div class="card-icon">🔎</div>
+          <h3>Ricerca semantica nei tuoi documenti</h3>
+          <p>Cerca come su Google nei tuoi PDF, Excel, email e file interni con un linguaggio naturale.</p>
         </div>
       </div>
     </div>
@@ -880,7 +820,7 @@
   </section>
 
   
-  <section class="section portfolio-section" id="portfolio-agentai">
+  <section class="section portfolio-section" id="portfolio-web">
     <div class="container">
       <h2>Siti Web</h2>
       <div class="grid">
@@ -908,14 +848,14 @@
     </div>
   </section>
 
-  <section class="section portfolio-section" id="portfolio-agentai">
+  <section class="section portfolio-section" id="portfolio-social">
     <div class="container">
       <h2>Social Media</h2>
       <div class="grid">
         <div class="card">
           <div class="media-container">
             <video controls>
-              <source src="videos/website_ecommerce.mp4" type="video/mp4">
+              <source src="videos/social_instagram1.mp4" type="video/mp4">
               Il tuo browser non supporta il video.
             </video>
           </div>
@@ -925,7 +865,7 @@
         <div class="card">
           <div class="media-container">
             <video controls>
-              <source src="videos/website_studiolegale.mp4" type="video/mp4">
+              <source src="videos/social_instagram2.mp4" type="video/mp4">
               Il tuo browser non supporta il video.
             </video>
           </div>
@@ -951,8 +891,8 @@
   <section class="section contact-section" id="contatti">
     <div class="container">
       <h2>Contattaci</h2>
-      <p class="section-intro">Vuoi avere piu informazioni sui nostri chat-bot e altri servizi, o se hai un'idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
-      <form action="https://tek-val-website.onrender.com/api/contact" method="POST">
+      <p class="section-intro">Vuoi avere più informazioni sui nostri chat-bot e altri servizi, o se hai un'idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
+      <form class="contact-form" action="https://tekval.ai/api/contact" method="POST">
         <div class="form-group">
           <input type="text" name="name" placeholder="Nome e Cognome" required>
         </div>
@@ -968,7 +908,334 @@
   </section>
 
   <footer class="footer">
-  &copy; 2025 TekVal. Tutti i diritti riservati. | info@tekval.it | +39 320 123 4567
+    &copy; 2025 TekVal. Tutti i diritti riservati. | info@tekval.it | +39 3458869118
   </footer>
+
+  <button class="chat-button" onclick="alert('Funzione chat in arrivo!')">✉</button>
+
+  <script>
+    // Form submission handling
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const button = this.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+      
+      // Visual feedback
+      button.textContent = 'Invio in corso...';
+      button.disabled = true;
+      
+      // Simulate form submission (replace with actual submission logic)
+      setTimeout(() => {
+        button.textContent = 'Messaggio inviato!';
+        button.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+          button.style.background = 'var(--gradient-blue)';
+          this.reset();
+        }, 2000);
+      }, 1000);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>d">
+          <div class="card-icon">🤖</div>
+          <h3>Chatbot Intelligenti</h3>
+          <p>I nostri chatbot non sono semplici risponditori automatici: sono veri e propri assistenti digitali. Interagiscono con i clienti, rispondono alle domande, guidano nelle scelte, automatizzano la comunicazione e lavorano 24/7. Costruiti su misura, con linguaggio naturale e integrazione totale nei tuoi sistemi.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Il tuo assistente virtuale, sempre operativo</h3>
+          <p>
+            Offriamo <strong>agenti AI personalizzati</strong> che lavorano al fianco del tuo team per migliorare l'efficienza e ridurre i costi operativi.
+            Un agente AI è un software intelligente in grado di svolgere in autonomia compiti come:
+          </p>
+          <ul>
+            <li>Rispondere alle domande dei clienti via chat, email o social 24/7</li>
+            <li>Analizzare dati e creare report automatici</li>
+            <li>Gestire ordini, prenotazioni o richieste interne</li>
+            <li>Automatizzare decisioni ripetitive in base a regole e dati</li>
+          </ul>
+          <p>
+            Il tutto <strong>integrato nei tuoi strumenti aziendali</strong>, con la capacità di apprendere dai tuoi processi per offrire prestazioni sempre migliori.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Ottimizzazione e Automazione dei Sistemi Aziendali</h3>
+          <p>Miglioriamo database e gestionali eliminando attività ripetitive, riducendo gli errori e aumentando la produttività. Con l'automazione personalizzata dei tuoi flussi aziendali, trasformiamo le routine in processi fluidi. Dall'inserimento dati alle notifiche automatiche, il tuo tempo torna ad essere una risorsa strategica.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <h3>Interfacce Moderne</h3>
+          <p>Progettiamo e realizziamo siti web, piattaforme intuitive e canali social(instagram, facebook, tiktok ecc...), accattivanti, responsive e performanti. L'esperienza utente è al centro: ogni interfaccia è pensata per essere semplice, bella e funzionale. Che tu voglia un sito vetrina o un portale complesso, ti accompagniamo in ogni fase del progetto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="soluzioni-ai">
+    <div class="container">
+      <h2>Soluzioni AI per la tua azienda</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3>Chatbot intelligenti</h3>
+          <p>Automatizza la conversazione con i clienti 24/7, integrato nei tuoi canali e sistemi preferiti.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📩</div>
+          <h3>Preventivi automatici via email</h3>
+          <p>Ricevi richieste via email, analizza i dati e rispondi con un preventivo automatico e preciso.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Dashboard con analisi AI</h3>
+          <p>Visualizza l'andamento della tua azienda in tempo reale con dashboard potenziate da intelligenza artificiale.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3>Gestione ordini e magazzino</h3>
+          <p>Organizza e traccia ordini, disponibilità, spedizioni e fatture in automatico.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📝</div>
+          <h3>Creazione documenti</h3>
+          <p>Genera contratti, DDT, bolle, preventivi e altri documenti con un click partendo da email o messaggi WhatsApp.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>Integrazione gestionale</h3>
+          <p>Connetti l'AI ai tuoi gestionali (es. TeamSystem, Excel, CRM) per automatizzare attività interne.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📥</div>
+          <h3>Smistamento email intelligente</h3>
+          <p>Filtra, categorizza e rispondi solo alle email rilevanti con AI addestrata su di te.</p>
+        </div>
+        <div class="card"
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>Integrazione gestionale</h3>
+          <p>Connetti l'AI ai tuoi gestionali (es. TeamSystem, Excel, CRM) per automatizzare attività interne.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📥</div>
+          <h3>Smistamento email intelligente</h3>
+          <p>Filtra, categorizza e rispondi solo alle email rilevanti con AI addestrata su di te.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔎</div>
+          <h3>Ricerca semantica nei tuoi documenti</h3>
+          <p>Cerca come su Google nei tuoi PDF, Excel, email e file interni con un linguaggio naturale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="portfolio-chatbot">
+    <div class="container">
+      <h2>Chatbot</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/chatbot1.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Bot Prenotazioni</h3>
+          <p>Chatbot che gestisce prenotazioni in tempo reale, rispondendo in modo naturale.</p>
+        </div>
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/chatbot2.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Assistenza Clienti</h3>
+          <p>Automatizza il supporto clienti 24/7 con risposte rapide e personalizzate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="portfolio-agentai">
+    <div class="container">
+      <h2>Agent AI</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/agentai1.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Agent Automazione Aziendale</h3>
+          <p>Agent AI autonomo che gestisce processi aziendali complessi, dall'analisi dei dati alla generazione di report automatici.</p>
+        </div>
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/agentai2.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Agent Decisionale Intelligente</h3>
+          <p>Sistema di agent AI che prende decisioni strategiche autonome, ottimizzando workflow e risolvendo problemi in tempo reale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="portfolio-web">
+    <div class="container">
+      <h2>Siti Web</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/website_ecommerce.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Confronto siti ecommerce</h3>
+          <p>Da un sito vecchio e confuso a uno moderno, chiaro e che conquista.</p>
+        </div>
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/website_studiolegale.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Confronto siti studio legale</h3>
+          <p>Da un sito vecchio e confuso a uno moderno, chiaro e che conquista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="portfolio-social">
+    <div class="container">
+      <h2>Social Media</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/social_instagram1.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Brand Moda - @luxurystyle_it</h3>
+          <p>+280% di engagement in 6 mesi: strategia di content creation mirata, storytelling del brand e collaborazioni influencer che hanno trasformato 15k follower in 45k clienti attivi.</p>
+        </div>
+        <div class="card">
+          <div class="media-container">
+            <video controls>
+              <source src="videos/social_instagram2.mp4" type="video/mp4">
+              Il tuo browser non supporta il video.
+            </video>
+          </div>
+          <h3>Ristorante - @sapori_autentici</h3>
+          <p>Da 800 a 12k follower in 4 mesi: contenuti food photography, stories interattive e campagne geolocalizzate che hanno aumentato le prenotazioni del +150%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio-section" id="chi-siamo">
+    <div class="container">
+      <h2>Chi è TekVal</h2>
+      <div class="section-intro">
+        <p>TekVal è nata nel 2023 dall'esperienza di sviluppatori e consulenti digitali che hanno lavorato con oltre 50 aziende tra Italia e Europa. Ci specializziamo in intelligenza artificiale applicata al business: non vendiamo tecnologia, ma soluzioni concrete che fanno risparmiare tempo e aumentare i ricavi.</p>
+        <br>
+        <p>I nostri clienti spaziano da startup tech a PMI consolidate: tutti hanno un obiettivo comune, automatizzare processi ripetitivi e migliorare l'esperienza clienti. Con TekVal riduci i costi operativi fino al 60% e aumenti la produttività del team, mantenendo sempre il controllo totale sui tuoi dati.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contatti">
+    <div class="container">
+      <h2>Contattaci</h2>
+      <p class="section-intro">Vuoi avere più informazioni sui nostri chat-bot e altri servizi, o se hai un'idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
+      <form class="contact-form" action="https://tekval.ai/api/contact" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Nome e Cognome" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Scrivi il tuo messaggio..." required></textarea>
+        </div>
+        <button type="submit">Invia Messaggio</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 TekVal. Tutti i diritti riservati. | assistenza@tekval.it | +39 3458869118
+  </footer>
+
+  <button class="chat-button" onclick="alert('Funzione chat in arrivo!')">✉</button>
+
+  <script>
+    // Form submission handling
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const button = this.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+      
+      // Visual feedback
+      button.textContent = 'Invio in corso...';
+      button.disabled = true;
+      
+      // Simulate form submission (replace with actual submission logic)
+      setTimeout(() => {
+        button.textContent = 'Messaggio inviato!';
+        button.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+          button.style.background = 'var(--gradient-blue)';
+          this.reset();
+        }, 2000);
+      }, 1000);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
