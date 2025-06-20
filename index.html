@@ -11,6 +11,16 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Dati strutturati per il logo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://www.tekval.ai",
+    "logo": "https://www.tekval.ai/logo.svg"
+  }
+  </script>
+
   <!-- Redirect forzato su HTTPS -->
   <script>
     if (location.protocol !== 'https:') {
@@ -36,7 +46,14 @@
       "contactType": "Customer Support",
       "areaServed": "IT",
       "availableLanguage": ["Italian", "English"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Viterbo",
+      "addressRegion": "Lazio",
+      "addressCountry": "IT"
     }
+
   }
   </script>
 </head>
