@@ -53,10 +53,8 @@
       "addressRegion": "Lazio",
       "addressCountry": "IT"
     }
-
   }
   </script>
-</head>
 
   <style>
     :root {
@@ -80,32 +78,6 @@
       --gradient-orange: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
       --gradient-red: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
       --gradient-blue: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    }
-    #soluzioni-ai {
-      background: radial-gradient(ellipse at center, rgba(52, 152, 219, 0.05) 0%, transparent 70%);
-    }
-
-    #soluzioni-ai .card::before {
-      background: var(--gradient-blue);
-    }
-
-    #soluzioni-ai .card::after {
-      background: radial-gradient(circle, rgba(52, 152, 219, 0.08) 0%, transparent 70%);
-    }
-
-    #soluzioni-ai .card:hover {
-      border-color: rgba(52, 152, 219, 0.4);
-      transform: translateY(-6px);
-      background: var(--bg-tertiary);
-      box-shadow: 0 20px 40px rgba(52, 152, 219, 0.1);
-    }
-
-    #soluzioni-ai .card-icon {
-      background: var(--gradient-blue);
-      color: white;
-    }
-    #soluzioni-ai {
-      scroll-margin-top: 100px;
     }
 
     * {
@@ -448,45 +420,15 @@
       background: radial-gradient(ellipse at center, rgba(231, 76, 60, 0.06) 0%, transparent 70%);
     }
 
-    #portfolio-chatbot .card::before {
+    .portfolio-section .card::before {
       background: var(--gradient-red);
     }
 
-    #portfolio-chatbot .card::after {
+    .portfolio-section .card::after {
       background: radial-gradient(circle, rgba(231, 76, 60, 0.08) 0%, transparent 70%);
     }
 
-    #portfolio-chatbot .card:hover {
-      border-color: rgba(231, 76, 60, 0.5);
-      transform: translateY(-6px);
-      background: var(--bg-tertiary);
-      box-shadow: 0 20px 40px rgba(231, 76, 60, 0.15);
-    }
-
-    #portfolio-agentai .card::before {
-      background: var(--gradient-red);
-    }
-
-    #portfolio-agentai .card::after {
-      background: radial-gradient(circle, rgba(231, 76, 60, 0.08) 0%, transparent 70%);
-    }
-
-    #portfolio-agentai .card:hover {
-      border-color: rgba(231, 76, 60, 0.5);
-      transform: translateY(-6px);
-      background: var(--bg-tertiary);
-      box-shadow: 0 20px 40px rgba(231, 76, 60, 0.15);
-    }
-
-    #portfolio-web-social .card::before {
-      background: var(--gradient-red);
-    }
-
-    #portfolio-web-social .card::after {
-      background: radial-gradient(circle, rgba(231, 76, 60, 0.08) 0%, transparent 70%);
-    }
-
-    #portfolio-web-social .card:hover {
+    .portfolio-section .card:hover {
       border-color: rgba(231, 76, 60, 0.5);
       transform: translateY(-6px);
       background: var(--bg-tertiary);
@@ -540,7 +482,7 @@
       box-shadow: 0 4px 20px rgba(52, 152, 219, 0.1);
     }
 
-    /* FORM STYLES - CORRETTI E COMPLETI */
+    /* FORM STYLES */
     .contact-form {
       max-width: 500px;
       margin: 0 auto;
@@ -559,7 +501,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Input e Textarea - Stili uniformi */
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -589,13 +530,11 @@
       box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
     }
 
-    /* Textarea specifica */
     .contact-form textarea {
       min-height: 120px;
       line-height: 1.5;
     }
 
-    /* Button del form */
     .contact-form button {
       width: 100%;
       background: var(--gradient-blue);
@@ -625,7 +564,6 @@
       transform: translateY(0);
     }
 
-    /* Effetto di caricamento per il button */
     .contact-form button:disabled {
       opacity: 0.7;
       cursor: not-allowed;
@@ -734,25 +672,23 @@
 
       .contact-form input,
       .contact-form textarea {
-        font-size: 16px; /* Previene zoom su iOS */
+        font-size: 16px;
       }
     }
-
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
       <div class="logo-section" style="display: flex; align-items: center; gap: 6px;">
-      <img src="https://tekval.ai/logo.png" alt="TekVal Logo">
-
-      <div class="logo-text" style="color: white; font-size: 1.4rem; font-weight: 600;">TekVal</div>
-    </div>
+        <img src="https://tekval.ai/logo.png" alt="TekVal Logo">
+        <div class="logo-text" style="color: white; font-size: 1.4rem; font-weight: 600;">TekVal</div>
+      </div>
       <nav>
         <a href="#servizi">Servizi</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#chi-siamo">Chi siamo</a>
         <a href="#contatti">Contatti</a>
-        <a href="#soluzioni-ai">Soluzioni AI</a>
       </nav>
     </div>
   </header>
@@ -773,206 +709,6 @@
       <h2>I nostri servizi</h2>
       <div class="grid">
         <div class="card">
-          <div class="card-icon">🔎</div>
-          <h3>Ricerca semantica nei tuoi documenti</h3>
-          <p>Cerca come su Google nei tuoi PDF, Excel, email e file interni con un linguaggio naturale.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section portfolio-section" id="portfolio-chatbot">
-    <div class="container">
-      <h2>Chatbot</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/chatbot1.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Bot Prenotazioni</h3>
-          <p>Chatbot che gestisce prenotazioni in tempo reale, rispondendo in modo naturale.</p>
-        </div>
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/chatbot2.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Assistenza Clienti</h3>
-          <p>Automatizza il supporto clienti 24/7 con risposte rapide e personalizzate.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section portfolio-section" id="portfolio-agentai">
-    <div class="container">
-      <h2>Agent AI</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/agentai1.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Agent Automazione Aziendale</h3>
-          <p>Agent AI autonomo che gestisce processi aziendali complessi, dall'analisi dei dati alla generazione di report automatici.</p>
-        </div>
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/agentai2.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Agent Decisionale Intelligente</h3>
-          <p>Sistema di agent AI che prende decisioni strategiche autonome, ottimizzando workflow e risolvendo problemi in tempo reale.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="section portfolio-section" id="portfolio-web">
-    <div class="container">
-      <h2>Siti Web</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/website_ecommerce.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Confronto siti ecommerce</h3>
-          <p>Da un sito vecchio e confuso a uno moderno, chiaro e che conquista.</p>
-        </div>
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/website_studiolegale.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Confronto siti studio legale</h3>
-          <p>Da un sito vecchio e confuso a uno moderno, chiaro e che conquista.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section portfolio-section" id="portfolio-social">
-    <div class="container">
-      <h2>Social Media</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/social_instagram1.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Instagram Brand Moda</h3>
-          <p>Un ottimo esempio di comunicazione visiva e contenuti di valore.</p>
-        </div>
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/social_instagram2.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Pagina instagram</h3>
-          <p>Design curato, contenuti utili e stile che colpisce: una pagina davvero ben fatta.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="section portfolio-section" id="chi-siamo">
-    <div class="container">
-      <h2>Chi è TekVal</h2>
-      <div class="section-intro">
-        <p>TekVal nasce dall'incontro tra competenze tecniche e passione per l'innovazione. Siamo un team multidisciplinare, giovane ma esperto, che crede nel potere delle tecnologie digitali quando sono davvero utili, comprensibili e orientate al risultato. Nessuna soluzione standard: solo progetti tagliati su misura.</p>
-        <br>
-        <p>Collaboriamo con startup ambiziose, aziende dinamiche e professionisti che vogliono migliorare il proprio rapporto con la tecnologia. Parliamo chiaro, ascoltiamo molto e agiamo con metodo. La nostra missione è aiutarti a crescere, digitalizzarti, e a comunicare con efficacia nel mondo online.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact-section" id="contatti">
-    <div class="container">
-      <h2>Contattaci</h2>
-      <p class="section-intro">Vuoi avere più informazioni sui nostri chat-bot e altri servizi, o se hai un'idea, un problema o un progetto da trasformare in realtà? Scrivici, siamo qui per ascoltarti. Con TekVal, ogni richiesta diventa un percorso condiviso, fatto di consulenza, sviluppo e supporto continuo. Compila il form e le risponderemo il prima possibile, grazie.</p>
-      <form class="contact-form" action="https://tekval.ai/api/contact" method="POST">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Nome e Cognome" required>
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="form-group">
-          <textarea name="message" rows="5" placeholder="Scrivi il tuo messaggio..." required></textarea>
-        </div>
-        <button type="submit">Invia Messaggio</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    &copy; 2025 TekVal. Tutti i diritti riservati. | info@tekval.it | +39 3458869118
-  </footer>
-
-  <button class="chat-button" onclick="alert('Funzione chat in arrivo!')">✉</button>
-
-  <script>
-    // Form submission handling
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const button = this.querySelector('button[type="submit"]');
-      const originalText = button.textContent;
-      
-      // Visual feedback
-      button.textContent = 'Invio in corso...';
-      button.disabled = true;
-      
-      // Simulate form submission (replace with actual submission logic)
-      setTimeout(() => {
-        button.textContent = 'Messaggio inviato!';
-        button.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
-        
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.disabled = false;
-          button.style.background = 'var(--gradient-blue)';
-          this.reset();
-        }, 2000);
-      }, 1000);
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  </script>
-</body>
-</html>d">
           <div class="card-icon">🤖</div>
           <h3>Chatbot Intelligenti</h3>
           <p>I nostri chatbot non sono semplici risponditori automatici: sono veri e propri assistenti digitali. Interagiscono con i clienti, rispondono alle domande, guidano nelle scelte, automatizzano la comunicazione e lavorano 24/7. Costruiti su misura, con linguaggio naturale e integrazione totale nei tuoi sistemi.</p>
@@ -1002,100 +738,13 @@
         <div class="card">
           <div class="card-icon">🎨</div>
           <h3>Interfacce Moderne</h3>
-          <p>Progettiamo e realizziamo siti web, piattaforme intuitive e canali social(instagram, facebook, tiktok ecc...), accattivanti, responsive e performanti. L'esperienza utente è al centro: ogni interfaccia è pensata per essere semplice, bella e funzionale. Che tu voglia un sito vetrina o un portale complesso, ti accompagniamo in ogni fase del progetto.</p>
+          <p>Progettiamo e realizziamo siti web, piattaforme intuitive e canali social (instagram, facebook, tiktok ecc...), accattivanti, responsive e performanti. L'esperienza utente è al centro: ogni interfaccia è pensata per essere semplice, bella e funzionale. Che tu voglia un sito vetrina o un portale complesso, ti accompagniamo in ogni fase del progetto.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section portfolio-section" id="soluzioni-ai">
-    <div class="container">
-      <h2>Soluzioni AI per la tua azienda</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>Chatbot intelligenti</h3>
-          <p>Automatizza la conversazione con i clienti 24/7, integrato nei tuoi canali e sistemi preferiti.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📩</div>
-          <h3>Preventivi automatici via email</h3>
-          <p>Ricevi richieste via email, analizza i dati e rispondi con un preventivo automatico e preciso.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <h3>Dashboard con analisi AI</h3>
-          <p>Visualizza l'andamento della tua azienda in tempo reale con dashboard potenziate da intelligenza artificiale.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📦</div>
-          <h3>Gestione ordini e magazzino</h3>
-          <p>Organizza e traccia ordini, disponibilità, spedizioni e fatture in automatico.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📝</div>
-          <h3>Creazione documenti</h3>
-          <p>Genera contratti, DDT, bolle, preventivi e altri documenti con un click partendo da email o messaggi WhatsApp.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔄</div>
-          <h3>Integrazione gestionale</h3>
-          <p>Connetti l'AI ai tuoi gestionali (es. TeamSystem, Excel, CRM) per automatizzare attività interne.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📥</div>
-          <h3>Smistamento email intelligente</h3>
-          <p>Filtra, categorizza e rispondi solo alle email rilevanti con AI addestrata su di te.</p>
-        </div>
-        <div class="card"
-        <div class="card">
-          <div class="card-icon">🔄</div>
-          <h3>Integrazione gestionale</h3>
-          <p>Connetti l'AI ai tuoi gestionali (es. TeamSystem, Excel, CRM) per automatizzare attività interne.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📥</div>
-          <h3>Smistamento email intelligente</h3>
-          <p>Filtra, categorizza e rispondi solo alle email rilevanti con AI addestrata su di te.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔎</div>
-          <h3>Ricerca semantica nei tuoi documenti</h3>
-          <p>Cerca come su Google nei tuoi PDF, Excel, email e file interni con un linguaggio naturale.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section portfolio-section" id="portfolio-chatbot">
-    <div class="container">
-      <h2>Chatbot</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/chatbot1.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Bot Prenotazioni</h3>
-          <p>Chatbot che gestisce prenotazioni in tempo reale, rispondendo in modo naturale.</p>
-        </div>
-        <div class="card">
-          <div class="media-container">
-            <video controls>
-              <source src="videos/chatbot2.mp4" type="video/mp4">
-              Il tuo browser non supporta il video.
-            </video>
-          </div>
-          <h3>Assistenza Clienti</h3>
-          <p>Automatizza il supporto clienti 24/7 con risposte rapide e personalizzate.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section portfolio-section" id="portfolio-agentai">
+  <section class="section portfolio-section" id="portfolio">
     <div class="container">
       <h2>Agent AI</h2>
       <div class="grid">
@@ -1123,7 +772,7 @@
     </div>
   </section>
 
-  <section class="section portfolio-section" id="portfolio-web">
+  <section class="section portfolio-section">
     <div class="container">
       <h2>Siti Web</h2>
       <div class="grid">
@@ -1151,7 +800,7 @@
     </div>
   </section>
 
-  <section class="section portfolio-section" id="portfolio-social">
+  <section class="section portfolio-section">
     <div class="container">
       <h2>Social Media</h2>
       <div class="grid">
@@ -1179,7 +828,7 @@
     </div>
   </section>
 
-  <section class="section portfolio-section" id="chi-siamo">
+  <section class="section" id="chi-siamo">
     <div class="container">
       <h2>Chi è TekVal</h2>
       <div class="section-intro">
