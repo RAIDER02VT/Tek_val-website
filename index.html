@@ -666,16 +666,29 @@
       }
 
       .contact-form {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 1rem;
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
         padding: 1.5rem;
         box-sizing: border-box;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--bg-secondary);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       }
 
       .contact-form input,
       .contact-form textarea {
         font-size: 16px;
+        width: 100%;
+        padding: 0.875rem 1rem;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        resize: vertical;
+        box-sizing: border-box;
       }
     }
   </style>
